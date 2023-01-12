@@ -1,6 +1,4 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:zphos/hyperlink.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -32,18 +30,18 @@ class AboutPage extends StatelessWidget {
               ),
               const Spacer(),
               const Text('Links'),
-              Hyperlink(
+              const Hyperlink(
                   text: "LinkedIn",
                   url: "https://www.linkedin.com/in/theo-hytopoulos-066392207/",
-                  icon: const Icon(FontAwesomeIcons.linkedin)),
-              Hyperlink(
+                  icon: Icon(FontAwesomeIcons.linkedin)),
+              const Hyperlink(
                   text: "Github",
                   url: "https://github.com/notyourav",
-                  icon: const Icon(FontAwesomeIcons.squareGithub)),
-              Hyperlink(
+                  icon: Icon(FontAwesomeIcons.squareGithub)),
+              const Hyperlink(
                   text: "Twitter",
                   url: "https://twitter.com/pokeprotos",
-                  icon: const Icon(FontAwesomeIcons.squareTwitter)),
+                  icon: Icon(FontAwesomeIcons.squareTwitter)),
               const Spacer(),
               Text(
                 'Built with Flutter and Firebase',

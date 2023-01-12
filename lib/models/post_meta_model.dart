@@ -11,7 +11,7 @@ class PostMetaModel {
       List<Map<String, dynamic>> list) {
     Map<String, List<PostMetaModel>> categories = {};
 
-    list.forEach((element) {
+    for (var element in list) {
       final String category = element['category'];
       final String id = element['post_id'];
       final String name = element['name'];
@@ -21,7 +21,7 @@ class PostMetaModel {
       } else {
         categories[category] = [PostMetaModel(id: id, name: name)];
       }
-    });
+    }
 
     return categories;
   }

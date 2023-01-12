@@ -30,14 +30,14 @@ class ExpandableSidebarItem extends StatelessWidget {
                 icon,
                 color: selected ? Colors.blue : Colors.grey,
               ),
-              SizedBox(width: 16.0),
+              const SizedBox(width: 16.0),
               Text(
                 title,
                 style: TextStyle(
                   color: selected ? Colors.blue : Colors.grey,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               if (expanded)
                 Icon(
                   Icons.expand_less,

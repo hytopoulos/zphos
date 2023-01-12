@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:zphos/about_page.dart';
 import 'package:zphos/firebase_options.dart';
-import 'package:zphos/homepage_tile.dart';
 import 'package:zphos/sidebar.dart';
 import 'package:zphos/title_bar.dart';
 
@@ -51,12 +50,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Center(
             child: Row(
               children: [
-                SideBar(),
+                const SideBar(),
                 Expanded(
                   child: Column(
-                    children: [
+                    children: const [
                       Expanded(
-                        child: const Center(
+                        child: Center(
                           child: Text("Hello World"),
                         ),
                         // child: GridView.count(

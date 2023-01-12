@@ -40,11 +40,11 @@ class _HomepageTileState extends State<HomepageTile> {
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 100),
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: _isHovering ? Colors.grey[200] : Colors.white,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black12,
                 blurRadius: 5,
@@ -60,18 +60,18 @@ class _HomepageTileState extends State<HomepageTile> {
                   widget.image,
                   height: 100,
                 ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 widget.title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 widget.subtitle,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                 ),

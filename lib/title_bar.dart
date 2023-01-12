@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zphos/about_button.dart';
-import 'package:zphos/about_page.dart';
-import 'package:curved_gradient/curved_gradient.dart';
 
 class TitleBar extends StatelessWidget {
   const TitleBar({super.key, required this.title});
@@ -41,7 +39,7 @@ class TitleBar extends StatelessWidget {
               },
             ),
             const Spacer(),
-            ButtonBar(
+            const ButtonBar(
               children: [
                 AboutButton(),
               ],

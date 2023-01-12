@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -7,7 +6,8 @@ class Hyperlink extends StatelessWidget {
   final String url;
   final Icon? icon;
 
-  Hyperlink({super.key, required this.text, required this.url, this.icon});
+  const Hyperlink(
+      {super.key, required this.text, required this.url, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Hyperlink extends StatelessWidget {
           if (icon != null) icon!,
           Text(
             text,
-            style: TextStyle(color: Colors.blue),
+            style: const TextStyle(color: Colors.blue),
           ),
         ],
       ),
