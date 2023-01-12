@@ -53,7 +53,7 @@ class _PostState extends State<Post> {
                     ),
                     Expanded(
                       child: Markdown(
-                        data: snapshot.data as String,
+                        data: snapshot.data!.replaceAll("\\n", "\n") as String,
                       ),
                     ),
                   ],
