@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '721561322441',
     projectId: 'zphos-6d37f',
     storageBucket: 'zphos-6d37f.appspot.com',
-    iosClientId: '721561322441-lr1dod2nh9605cr9dfv7am9lt0tq31rv.apps.googleusercontent.com',
+    iosClientId:
+        '721561322441-lr1dod2nh9605cr9dfv7am9lt0tq31rv.apps.googleusercontent.com',
     iosBundleId: 'com.example.zphos',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '721561322441',
     projectId: 'zphos-6d37f',
     storageBucket: 'zphos-6d37f.appspot.com',
-    iosClientId: '721561322441-lr1dod2nh9605cr9dfv7am9lt0tq31rv.apps.googleusercontent.com',
+    iosClientId:
+        '721561322441-lr1dod2nh9605cr9dfv7am9lt0tq31rv.apps.googleusercontent.com',
     iosBundleId: 'com.example.zphos',
   );
 }
