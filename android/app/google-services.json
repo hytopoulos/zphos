@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "721561322441",
+    "project_id": "zphos-6d37f",
+    "storage_bucket": "zphos-6d37f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721561322441:android:6fbc86582a66b9ab4fde18",
+        "android_client_info": {
+          "package_name": "com.example.zphos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721561322441-mdbjlea32tadp65pfn7e8bgtnbn80k77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO2QlFrPofrU_ky8NjrovDQYHIrEU5eu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721561322441-mdbjlea32tadp65pfn7e8bgtnbn80k77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

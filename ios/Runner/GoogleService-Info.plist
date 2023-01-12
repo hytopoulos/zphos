@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>721561322441-lr1dod2nh9605cr9dfv7am9lt0tq31rv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.721561322441-lr1dod2nh9605cr9dfv7am9lt0tq31rv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB1ff3pUu3_n3SuynHM4EQLclqXNVGl2ss</string>
+	<key>GCM_SENDER_ID</key>
+	<string>721561322441</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.zphos</string>
+	<key>PROJECT_ID</key>
+	<string>zphos-6d37f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zphos-6d37f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:721561322441:ios:c79d2723a59ecc9d4fde18</string>
+</dict>
+</plist>
