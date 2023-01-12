@@ -4,6 +4,7 @@ import 'package:zphos/models/post_meta_model.dart';
 import 'package:zphos/services/firestore_service.dart';
 import 'package:zphos/sidebar.dart';
 import 'package:zphos/title_bar.dart';
+import 'package:markdown/markdown.dart' as md;
 
 class Post extends StatefulWidget {
   const Post({super.key});
@@ -53,7 +54,8 @@ class _PostState extends State<Post> {
                     ),
                     Expanded(
                       child: Markdown(
-                        data: snapshot.data!.replaceAll("\\n", "\n") as String,
+                        data: snapshot.data!.replaceAll("\\n", "\n"),
+                        extensionSet: md.ExtensionSet.gitHubFlavored,
                       ),
                     ),
                   ],
