@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class FirebaseService {
+class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   Future<List<Map<String, dynamic>>> getPostMeta() {
@@ -10,5 +10,10 @@ class FirebaseService {
     return meta.get().then((value) {
       return value.docs.map((e) => e.data()).toList();
     });
+  }
+
+  Future<String> getPost(String id) {
+    CollectionReference<Map<String, dynamic>> posts = _db.collection('post');
+    return posts.doc(id).get().then((value) => value.data()!['content']);
   }
 }

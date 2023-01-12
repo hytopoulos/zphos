@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:zphos/models/post_meta_model.dart';
-import 'package:zphos/services/firebase_service.dart';
+import 'package:zphos/services/firestore_service.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -12,16 +12,14 @@ class SideBar extends StatefulWidget {
 }
 
 class _SideBarState extends State<SideBar> {
-  bool _isExpanded = true;
-
   @override
   Widget build(BuildContext context) {
     final Future<List<Map<String, dynamic>>> posts =
-        FirebaseService().getPostMeta();
+        FirestoreService().getPostMeta();
 
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 100),
-      width: _isExpanded ? 300 : 50,
+    return Drawer(
+      backgroundColor: Colors.white,
+      elevation: 0,
       child: Column(
         children: [
           const SizedBox(
@@ -30,12 +28,10 @@ class _SideBarState extends State<SideBar> {
           Container(
             alignment: Alignment.centerLeft,
             child: IconButton(
-              icon: _isExpanded
-                  ? const Icon(Icons.arrow_back)
-                  : const Icon(Icons.arrow_forward),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 setState(() {
-                  _isExpanded = !_isExpanded;
+                  Scaffold.of(context).closeDrawer();
                 });
               },
             ),
@@ -67,7 +63,11 @@ class _SideBarState extends State<SideBar> {
                               (e) => ListTile(
                                 title: Text(e.name),
                                 onTap: () {
-                                  log(e.id);
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/post',
+                                    arguments: e,
+                                  );
                                 },
                               ),
                             )

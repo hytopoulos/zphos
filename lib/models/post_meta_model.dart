@@ -1,10 +1,12 @@
 class PostMetaModel {
   final String id;
   final String name;
+  final String category;
 
   PostMetaModel({
     required this.id,
     required this.name,
+    required this.category,
   });
 
   static Map<String, List<PostMetaModel>> parseCategories(
@@ -17,9 +19,12 @@ class PostMetaModel {
       final String name = element['name'];
 
       if (categories.containsKey(category)) {
-        categories[category]!.add(PostMetaModel(id: id, name: name));
+        categories[category]!
+            .add(PostMetaModel(id: id, name: name, category: category));
       } else {
-        categories[category] = [PostMetaModel(id: id, name: name)];
+        categories[category] = [
+          PostMetaModel(id: id, name: name, category: category)
+        ];
       }
     }
 
