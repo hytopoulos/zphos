@@ -43,9 +43,9 @@ class AboutPage extends StatelessWidget {
                   url: "https://twitter.com/pokeprotos",
                   icon: Icon(FontAwesomeIcons.squareTwitter)),
               const Spacer(),
-              Text(
+              const Text(
                 'Built with Flutter and Firebase',
-                style: Theme.of(context).textTheme.caption,
+                style: TextStyle(color: Colors.grey),
               ),
             ],
           ),
