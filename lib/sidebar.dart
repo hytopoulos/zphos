@@ -18,7 +18,6 @@ class _SideBarState extends State<SideBar> {
         FirestoreService().getPostMeta();
 
     return Drawer(
-      backgroundColor: Colors.white,
       elevation: 0,
       child: Column(
         children: [
@@ -63,10 +62,13 @@ class _SideBarState extends State<SideBar> {
                               (e) => ListTile(
                                 title: Text(e.name),
                                 onTap: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    '/post',
-                                    arguments: e,
+                                  Navigator.of(context, rootNavigator: true)
+                                      .pushNamed(
+                                    Uri(path: '/post', queryParameters: {
+                                      'id': e.id,
+                                      'category': e.category,
+                                      'name': e.name,
+                                    }).toString(),
                                   );
                                 },
                               ),

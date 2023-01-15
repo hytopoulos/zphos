@@ -10,8 +10,8 @@ class TitleBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade400.withAlpha(200),
-        backgroundBlendMode: BlendMode.difference,
+        color: Theme.of(context).scaffoldBackgroundColor.withAlpha(200),
+        // backgroundBlendMode: BlendMode.difference,
       ),
       // gradient: CurvedGradient(
       //     begin: Alignment.topCenter,
@@ -25,17 +25,15 @@ class TitleBar extends StatelessWidget {
           children: [
             TextButton(
               child: Text(
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryTextTheme.titleLarge!.color,
                 ),
                 title,
               ),
               onPressed: () {
-                if (Navigator.of(context).canPop()) {
-                  Navigator.of(context).pop();
-                }
+                Navigator.pushNamed(context, '/');
               },
             ),
             const Spacer(),
