@@ -32,7 +32,7 @@ class AboutButton extends StatelessWidget {
       },
       child: const Text(
         'About',
-        style: TextStyle(color: Colors.white),
+        // style: TextStyle(color: Colors.white),
       ),
     );
   }

@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:zphos/about_button.dart';
+import 'package:zphos/main.dart';
+
+// class TitleBar extends StatefulWidget {
+//   const TitleBar({super.key, required this.title});
+
+//   final String title;
+
+//   @override
+//   State<TitleBar> createState() => _TitleBarState();
+// }
 
 class TitleBar extends StatelessWidget {
-  const TitleBar({super.key, required this.title});
-
   final String title;
+  final void Function() onMenuPressed;
+
+  const TitleBar({super.key, required this.title, required this.onMenuPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +34,10 @@ class TitleBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: Row(
           children: [
+            IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: onMenuPressed,
+            ),
             TextButton(
               child: Text(
                 style: TextStyle(
@@ -33,7 +48,15 @@ class TitleBar extends StatelessWidget {
                 title,
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacement(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (_, __, ___) =>
+                        const MyHomePage(title: 'ZPHOS'),
+                    transitionDuration: Duration.zero,
+                  ),
+                );
+                // Navigator.pushNamed(context, '/');
               },
             ),
             const Spacer(),

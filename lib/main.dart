@@ -84,18 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
           drawerScrimColor: Colors.transparent,
           body: Stack(
             children: [
-              Container(
-                padding: const EdgeInsets.only(top: 50),
-                alignment: Alignment.topLeft,
-                child: IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () {
-                    setState(() {
-                      _scaffoldKey.currentState!.openDrawer();
-                    });
-                  },
-                ),
-              ),
               Center(
                 child: Row(
                   children: [
@@ -106,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Expanded(
                             child: Center(
                               child: Text(
-                                  'Under construction! Please use the side bar.'),
+                                  'Homepage coming soon. Please use the side bar.'),
                               // child: GridView.count(
                               //   padding: const EdgeInsets.symmetric(
                               //       horizontal: 20, vertical: 80),
@@ -128,10 +116,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+              TitleBar(
+                  title: widget.title,
+                  onMenuPressed: () {
+                    setState(() {
+                      _scaffoldKey.currentState!.openDrawer();
+                    });
+                  }),
             ],
           ),
         ),
-        TitleBar(title: widget.title),
       ],
     );
   }
