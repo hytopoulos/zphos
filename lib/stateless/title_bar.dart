@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zphos/homepage.dart';
-
-// class TitleBar extends StatefulWidget {
-//   const TitleBar({super.key, required this.title});
-
-//   final String title;
-
-//   @override
-//   State<TitleBar> createState() => _TitleBarState();
-// }
+import 'package:zphos/app_strings.dart';
+import 'package:zphos/screens/homepage.dart';
 
 class TitleBar extends StatelessWidget {
   final String title;
@@ -21,14 +13,7 @@ class TitleBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor.withAlpha(200),
-        // backgroundBlendMode: BlendMode.difference,
       ),
-      // gradient: CurvedGradient(
-      //     begin: Alignment.topCenter,
-      //     end: Alignment.bottomCenter,
-      //     colors: [Colors.grey[400]!, Colors.transparent],
-      //     granularity: 2,
-      //     curveGenerator: ((p0) => Curves.elasticIn.transform(p0)))),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: Row(
@@ -47,7 +32,7 @@ class TitleBar extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (_, __, ___) =>
-                        const MyHomePage(title: 'ZPHOS'),
+                        const MyHomePage(title: AppStrings.appName),
                     transitionDuration: Duration.zero,
                   ),
                 );

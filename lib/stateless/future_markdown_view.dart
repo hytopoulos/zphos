@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zphos/markdown_view.dart';
+import 'package:zphos/stateless/markdown_view.dart';
 import 'package:zphos/services/firestore_service.dart';
 
 class FutureMarkdownView extends StatelessWidget {

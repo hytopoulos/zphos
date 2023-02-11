@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:zphos/future_markdown_view.dart';
-import 'package:zphos/sidebar.dart';
-import 'package:zphos/title_bar.dart';
+import 'package:zphos/app_strings.dart';
+import 'package:zphos/stateless/future_markdown_view.dart';
+import 'package:zphos/stateful/sidebar.dart';
+import 'package:zphos/stateless/title_bar.dart';
 
+/// Expects a query parameter named 'id' to be passed with the current route.
 class Post extends StatefulWidget {
   const Post({super.key});
 
@@ -15,12 +17,10 @@ class _PostState extends State<Post> {
 
   @override
   Widget build(BuildContext context) {
-    // post/<category>/<name>?id=<id>
+    // post?id=<id>&category=<category>&name=<title>
     RouteSettings settings = ModalRoute.of(context)!.settings;
     final settingsUri = Uri.parse(settings.name!);
     final postID = settingsUri.queryParameters['id']!;
-    // final category = settingsUri.queryParameters['category'] ?? "";
-    // final name = settingsUri.queryParameters['name'] ?? "";
 
     return Scaffold(
       key: _scaffoldKey,
@@ -29,30 +29,13 @@ class _PostState extends State<Post> {
         children: [
           Column(
             children: [
-              // Container(
-              //   padding: const EdgeInsets.only(
-              //     top: 40,
-              //     left: 20,
-              //     right: 20,
-              //   ),
-              //   alignment: Alignment.topLeft,
-              //   child: IconButton(
-              //     icon: const Icon(Icons.menu),
-              //     onPressed: () {
-              //       setState(() {
-              //         _scaffoldKey.currentState!.openDrawer();
-              //       });
-              //     },
-              //   ),
-              // ),
               Expanded(
                 child: FutureMarkdownView(id: postID),
               ),
             ],
           ),
-          // TitleBar(title: name),
           TitleBar(
-            title: "ZPHOS",
+            title: AppStrings.appName,
             onMenuPressed: (() {
               setState(() {
                 _scaffoldKey.currentState!.openDrawer();

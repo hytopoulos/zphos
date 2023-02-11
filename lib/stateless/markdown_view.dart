@@ -67,14 +67,12 @@ class MarkdownView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Markdown(
-      //scale padding with screen size
       padding: EdgeInsets.symmetric(
           vertical: MediaQuery.of(context).size.height / 10,
           horizontal: MediaQuery.of(context).size.width / 10),
       data: content,
       extensionSet: md.ExtensionSet.gitHubWeb,
       builders: {
-        // 'table': TableBuilder(),
         'code': CodeHighlighter(),
       },
       onTapLink: (text, href, title) {
