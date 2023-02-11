@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:zphos/firebase_options.dart';
 import 'package:zphos/homepage.dart';
 import 'package:zphos/post.dart';
-import 'package:zphos/sidebar.dart';
-import 'package:zphos/title_bar.dart';
 import 'package:zphos/paths.dart';
-// import 'package:provider/provider.dart';
 
 List<Path> paths = [
   Path(
@@ -59,59 +56,6 @@ class MyApp extends StatelessWidget {
         }
         return null;
       },
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Scaffold(
-          key: _scaffoldKey,
-          drawer: const SideBar(),
-          drawerScrimColor: Colors.transparent,
-          body: Stack(
-            children: [
-              Center(
-                child: Row(
-                  children: [
-                    // const SideBar(),
-                    Expanded(
-                      child: Column(
-                        children: const [
-                          Expanded(
-                            child: Homepage(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              TitleBar(
-                  title: widget.title,
-                  onMenuPressed: () {
-                    setState(() {
-                      _scaffoldKey.currentState!.openDrawer();
-                    });
-                  }),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
