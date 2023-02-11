@@ -28,7 +28,9 @@ class _MyHomePageState extends State<MyHomePage> {
               Center(
                 child: Column(
                   children: const [
-                    FutureMarkdownView(id: "homepage", isStatic: true),
+                    Expanded(
+                        child:
+                            FutureMarkdownView(id: "homepage", isStatic: true)),
                     AppFooter(),
                   ],
                 ),
