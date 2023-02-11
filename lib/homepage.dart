@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zphos/hyperlink_button.dart';
+import 'package:zphos/markdown_view.dart';
 import 'package:zphos/services/firestore_service.dart';
 
 class Homepage extends StatelessWidget {
@@ -23,7 +24,7 @@ class Homepage extends StatelessWidget {
             body: Center(
               child: Column(
                 children: [
-                  Text(snapshot.data.toString()),
+                  MarkdownView(content: snapshot.data!.replaceAll("\\n", "\n")),
                   const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
