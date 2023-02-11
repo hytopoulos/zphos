@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zphos/about_page.dart';
+import 'package:zphos/defunct/about_page.dart';
 
 class AboutButton extends StatelessWidget {
   const AboutButton({super.key});
@@ -31,7 +31,7 @@ class AboutButton extends StatelessWidget {
                 }));
       },
       child: const Text(
-        'About',
+        'Contact Me',
         // style: TextStyle(color: Colors.white),
       ),
     );

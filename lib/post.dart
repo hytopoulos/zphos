@@ -134,12 +134,17 @@ class _PostState extends State<Post> {
                             child: Wrap(
                               children: [
                                 Container(
+                                  margin: const EdgeInsets.only(
+                                    top: 20,
+                                    bottom: 20,
+                                  ),
                                   decoration: BoxDecoration(
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.black.withOpacity(0.2),
                                         spreadRadius: 1,
                                         blurRadius: 7,
+                                        blurStyle: BlurStyle.outer,
                                         offset: const Offset(0, 3),
                                       ),
                                     ],

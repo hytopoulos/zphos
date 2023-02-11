@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zphos/about_button.dart';
 import 'package:zphos/main.dart';
 
 // class TitleBar extends StatefulWidget {
@@ -34,10 +33,6 @@ class TitleBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: Row(
           children: [
-            IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: onMenuPressed,
-            ),
             TextButton(
               child: Text(
                 style: TextStyle(
@@ -60,11 +55,15 @@ class TitleBar extends StatelessWidget {
               },
             ),
             const Spacer(),
-            const ButtonBar(
-              children: [
-                AboutButton(),
-              ],
+            IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: onMenuPressed,
             ),
+            // const ButtonBar(
+            //   children: [
+            //     AboutButton(),
+            //   ],
+            // ),
           ],
         ),
       ),

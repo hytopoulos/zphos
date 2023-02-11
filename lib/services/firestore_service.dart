@@ -16,4 +16,10 @@ class FirestoreService {
     CollectionReference<Map<String, dynamic>> posts = _db.collection('post');
     return posts.doc(id).get().then((value) => value.data()!['content']);
   }
+
+  Future<String> getPostStatic(String id) {
+    CollectionReference<Map<String, dynamic>> posts =
+        _db.collection('post_static');
+    return posts.doc(id).get().then((value) => value.data()!['content']);
+  }
 }

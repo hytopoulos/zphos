@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:zphos/firebase_options.dart';
+import 'package:zphos/homepage.dart';
 import 'package:zphos/post.dart';
 import 'package:zphos/sidebar.dart';
 import 'package:zphos/title_bar.dart';
@@ -92,23 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                         children: const [
                           Expanded(
-                            child: Center(
-                              child: Text(
-                                  'Homepage coming soon. Please use the side bar.'),
-                              // child: GridView.count(
-                              //   padding: const EdgeInsets.symmetric(
-                              //       horizontal: 20, vertical: 80),
-                              //   crossAxisCount: 4,
-                              //   children: [
-                              //     for (int i = 0; i < 10; i++)
-                              //       const HomepageTile(
-                              //           title: "Title",
-                              //           subtitle: "subtitle",
-                              //           image: "",
-                              //           route: ""),
-                              //   ],
-                              // ),
-                            ),
+                            child: Homepage(),
                           ),
                         ],
                       ),
