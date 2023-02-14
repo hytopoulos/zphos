@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:zphos/app_strings.dart';
 import 'package:zphos/screens/homepage.dart';
 
-class TitleBar extends StatelessWidget {
+class AppHeader extends StatelessWidget {
   final String title;
   final void Function() onMenuPressed;
 
-  const TitleBar({super.key, required this.title, required this.onMenuPressed});
+  const AppHeader(
+      {super.key, required this.title, required this.onMenuPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,19 @@ class TitleBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: Row(
           children: [
+            ButtonBar(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: onMenuPressed,
+                ),
+                // TextButton(
+                //     onPressed: () {
+                //       Navigator.pushNamed(context, '/posts');
+                //     },
+                //     child: const Text('Posts')),
+              ],
+            ),
             TextButton(
               child: Text(
                 style: TextStyle(
@@ -40,15 +54,6 @@ class TitleBar extends StatelessWidget {
               },
             ),
             const Spacer(),
-            IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: onMenuPressed,
-            ),
-            // const ButtonBar(
-            //   children: [
-            //     AboutButton(),
-            //   ],
-            // ),
           ],
         ),
       ),

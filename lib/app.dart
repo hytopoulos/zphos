@@ -25,12 +25,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'NunitoSans',
         primarySwatch: Colors.grey,
-        // dark theme if platform is dark
         brightness: MediaQueryData.fromWindow(WidgetsBinding.instance.window)
-                    .platformBrightness ==
-                Brightness.dark
-            ? Brightness.dark
-            : Brightness.light,
+            .platformBrightness,
       ),
       home: const MyHomePage(title: AppStrings.appName),
       onGenerateRoute: (settings) {

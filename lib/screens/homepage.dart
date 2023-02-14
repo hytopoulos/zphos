@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:zphos/app_style.dart';
 import 'package:zphos/stateless/app_footer.dart';
 import 'package:zphos/stateless/future_markdown_view.dart';
 import 'package:zphos/stateful/sidebar.dart';
-import 'package:zphos/stateless/title_bar.dart';
+import 'package:zphos/stateless/app_header.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -25,17 +26,21 @@ class _MyHomePageState extends State<MyHomePage> {
           drawer: const SideBar(),
           body: Stack(
             children: [
-              Center(
-                child: Column(
-                  children: const [
-                    Expanded(
-                        child:
-                            FutureMarkdownView(id: "homepage", isStatic: true)),
-                    AppFooter(),
-                  ],
-                ),
+              ListView(
+                shrinkWrap: true,
+                children: [
+                  Container(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height,
+                    ),
+                    padding: AppStyle.withTheme(context).kDefaultPagePadding,
+                    child: const FutureMarkdownView(
+                        id: 'homepage', isStatic: true),
+                  ),
+                  const AppFooter(),
+                ],
               ),
-              TitleBar(
+              AppHeader(
                   title: widget.title,
                   onMenuPressed: () {
                     setState(() {

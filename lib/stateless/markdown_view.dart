@@ -66,51 +66,53 @@ class MarkdownView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Markdown(
-      padding: EdgeInsets.symmetric(
-          vertical: MediaQuery.of(context).size.height / 10,
-          horizontal: MediaQuery.of(context).size.width / 10),
-      data: content,
-      extensionSet: md.ExtensionSet.gitHubWeb,
-      builders: {
-        'code': CodeHighlighter(),
-      },
-      onTapLink: (text, href, title) {
-        launchUrl(Uri.parse(href!));
-      },
-      selectable: true,
-      imageDirectory: 'assets/',
-      imageBuilder: (uri, title, alt) {
-        return Container(
-          alignment: Alignment.center,
-          child: Wrap(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(
-                  top: 20,
-                  bottom: 20,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: MediaQuery.of(context).size.height,
+      ),
+      child: MarkdownBody(
+        data: content,
+        extensionSet: md.ExtensionSet.gitHubWeb,
+        builders: {
+          'code': CodeHighlighter(),
+        },
+        onTapLink: (text, href, title) {
+          launchUrl(Uri.parse(href!));
+        },
+        selectable: true,
+        imageDirectory: 'assets/',
+        imageBuilder: (uri, title, alt) {
+          return Container(
+            alignment: Alignment.center,
+            child: Wrap(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 20,
+                    bottom: 20,
+                  ),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 1,
+                        blurRadius: 7,
+                        blurStyle: BlurStyle.outer,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Image.asset(
+                    height: 400,
+                    uri.toString(),
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      spreadRadius: 1,
-                      blurRadius: 7,
-                      blurStyle: BlurStyle.outer,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Image.asset(
-                  height: 400,
-                  uri.toString(),
-                  fit: BoxFit.fitWidth,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
