@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('fonts/Nunito_Sans/NunitoSans-Regular.ttf');
+}
+
+body {
+    font-family: 'NunitoSans';
+    background-color: #2c2c2c;
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'NunitoSans';
+    font-size: 1.5em;
+    color: rgb(156, 156, 156);
+}
