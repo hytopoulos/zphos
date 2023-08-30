@@ -25,7 +25,7 @@ jobs:
       # Run widget tests for our flutter project.
       # - run: flutter test
 
-      - run: flutter build web
+      - run: flutter build web --no-tree-shake-icons
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
