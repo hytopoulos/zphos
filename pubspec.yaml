@@ -78,6 +78,9 @@ flutter:
     - assets/typinginsights_img1.png
     - assets/typinginsights_img2.png
     - assets/TypoInsights.ipynb
+    - assets/disk.jpg
+    - assets/IS_Devkit.jpg
+    - assets/redalarm005.900x.jpg
 
   fonts:
     - family: NunitoSans
