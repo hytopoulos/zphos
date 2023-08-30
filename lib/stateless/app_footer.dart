@@ -19,11 +19,11 @@ class AppFooter extends StatelessWidget {
           ),
         ),
       ),
-      child: Column(
+      child: const Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               HyperlinkButton(
                   url: AppStrings.myLinkedin,
                   icon: FontAwesomeIcons.linkedin,
@@ -36,7 +36,7 @@ class AppFooter extends StatelessWidget {
                   hoverColor: Colors.blue),
             ],
           ),
-          const FittedBox(
+          FittedBox(
             child:
                 Hyperlink(text: AppStrings.footer, url: AppStrings.footerURL),
           ),
