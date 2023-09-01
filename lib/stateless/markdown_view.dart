@@ -7,14 +7,12 @@ import 'package:flutter_highlighter/themes/solarized-light.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:zphos/app_style.dart';
 
 class CodeHighlighter extends MarkdownElementBuilder {
   @override
   Widget? visitElementAfter(md.Element element, TextStyle? preferredStyle) {
     var language = '';
-
-    final brightness = MediaQueryData.fromWindow(WidgetsBinding.instance.window)
-        .platformBrightness;
 
     if (element.attributes['class'] == null) {
       return null;
@@ -44,7 +42,7 @@ class CodeHighlighter extends MarkdownElementBuilder {
       child: HighlightView(
         element.textContent,
         language: language,
-        theme: brightness == Brightness.dark
+        theme: AppStyle.kBrightness == Brightness.dark
             ? solarizedDarkTheme
             : solarizedLightTheme,
         padding: const EdgeInsets.only(
@@ -108,7 +106,7 @@ class MarkdownView extends StatelessWidget {
                   child: Image.asset(
                     height: 400,
                     uri.toString(),
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
               ],

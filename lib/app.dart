@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zphos/app_strings.dart';
+import 'package:zphos/app_style.dart';
 import 'package:zphos/path.dart';
 import 'package:zphos/screens/homepage.dart';
 import 'package:zphos/screens/post.dart';
@@ -25,8 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'NunitoSans',
         primarySwatch: Colors.grey,
-        brightness: Brightness.light,
-        // MediaQueryData.fromView(View.of(context)).platformBrightness,
+        brightness: AppStyle.kBrightness,
       ),
       home: const MyHomePage(title: AppStrings.appName),
       onGenerateRoute: (settings) {
