@@ -77,6 +77,7 @@ class MarkdownView extends StatelessWidget {
         extensionSet: md.ExtensionSet.gitHubWeb,
         builders: {
           'code': CodeHighlighter(),
+          // 'blockquote': BlockQuoteBuilder(),
         },
         onTapLink: (text, href, title) {
           launchUrl(Uri.parse(href!));

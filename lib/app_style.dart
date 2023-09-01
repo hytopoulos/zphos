@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppStyle {
   static BuildContext? _ctx;
 
-  static const kDefaultPagePaddingSides = 0.1;
+  static const kDefaultPagePaddingSides = 0.2;
   static const kDefaultPagePaddingTop = 0.08;
   static const kDefaultPagePaddingBottom = 0.2;
 
